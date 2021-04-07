@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # 3rd Party Apps
 
     # My Apps
+    'home',
 ]
 
 MIDDLEWARE = [
