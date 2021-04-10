@@ -1,0 +1,27 @@
+{% load static %}
+<nav class="navbar navbar-expand-md bg-white shadow-sm sticky-top d-md-none">
+    <div class="container-fluid">
+        <a href="{% url 'home' %}" class="navbar-brand">
+            <img src="{% static 'logo.png' %}" alt="101 Transfurmations Logo" class="img-fluid logo">
+        </a>
+        <a class="navbar-toggler" role="button" data-bs-toggle="collapse" data-bs-target="#mobileCollapseNav" aria-controls="mobileCollapseNav" aria-expanded="false" aria-label="Toggle Navigation">
+            <i class="bi bi-three-dots-vertical"></i>
+        </a>
+        <div class="collapse navbar-collapse" id="mobileCollapseNav">
+            <ul class="navbar-nav text-center">
+                <li class="nav-item">
+                    <a href="{% url 'home' %}" class="nav-link hvr-underline-from-left">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link hvr-underline-from-left">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link hvr-underline-from-left">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link hvr-underline-from-left">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
