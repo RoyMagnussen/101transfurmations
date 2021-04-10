@@ -18,3 +18,10 @@
 - The `Review` model allows for customers to create a review about the company and the services that they provide.
 - The `name` field has a default value of `A 101 Transfurmations Customer`, this is so that there is still a value even if the customer does not provide their name.
 - The `date_added` field is automatically set when the review is saved.
+
+### Forms
+
+### Review Creation Form
+
+- The `ReviewCreationForm` allows the customer to create a review directly in the review page.
+- Once it is created, the review page is then updated and the new review is displayed.
