@@ -25,6 +25,7 @@
     <!-- Extra CSS -->
     {% block extra_css %}
       <link rel="stylesheet" href="{% static 'css/hover.css' %}">
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     {% endblock extra_css %}
     <title>{{ title }} | 101 Transfurmations Dog Grooming</title>
   </head>
@@ -46,6 +47,11 @@
     ></script>
     {% endblock core_js %}
     <!-- Extra JS -->
-    {% block extra_js %} {% endblock extra_js %}
+    {% block extra_js %}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    {% endblock extra_js %}
   </body>
 </html>
