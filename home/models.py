@@ -16,9 +16,10 @@ class GalleryImage(models.Model):
     def __str__(self) -> str:
         return self.name
 
-    def __init__(self, *args, **kwargs):
-        super(GalleryImage, self).__init__(*args, **kwargs)
+    def save(self, *args, **kwargs):
 
         img = Image.open(self.image)
         img.thumbnail((300, 500))
         img.save(self.image)
+        
+        super(GalleryImage, self).save(*args, **kwargs)
