@@ -63,16 +63,16 @@
 <section class="home-page-section" id="gallery">
     <div class="container-fluid h-100 p-5">
         <div class="row h-100">
-            <h1 class="display-1 lobster text-center">Our previous customers!</h1>
+            <h1 class="display-1 lobster text-center" data-aos="fade" data-aos-duration="1000">Our previous customers!</h1>
             {% for image in gallery_images %}
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center align-middle mt-5">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center align-middle mt-5" data-aos="fade" data-aos-duration="1000" data-aos-delay="500">
                     <div class="card border-0 rounded-0 gallery-image">
                         <img src="{{ image.image.url }}" alt="{{ image.name }}">
                         <small class="text-center mt-2">{{ image.name }}</small>
                     </div>
                 </div>
             {% endfor %}
-            <p class="fw-bold text-center mt-5">Read some reviews about us below!</p>
+            <p class="fw-bold text-center mt-5" data-aos="fade" data-aos-duration="1000" data-aos-delay="1000">Read some reviews about us below!</p>
             <div class="col-12 d-flex justify-content-center align-middle">
                 <div class="d-block m-auto">
                     <a href="#reviews" role="button" class="btn btn-lg rounded-0 my-auto hvr-wobble-vertical" data-aos="fade" data-aos-duration="1000" data-aos-delay="1500">
