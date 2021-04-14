@@ -30,7 +30,7 @@
 <section class="home-page-section bg-blue" id="about">
     <div class="container-fluid h-100 p-5">
         <div class="row h-100">
-            <h1 class="display-1 lobster text-center" data-aos="fade" data-aos-duration="1000">What we're all about!</h1>
+            <h1 class="display-1 lobster text-center mb-5" data-aos="fade" data-aos-duration="1000">What we're all about!</h1>
             <div class="col-12 col-md-6 d-flex justify-content-center align-middle">
                 <img src="{% static 'profile_picture.png' %}" alt="Ella's Profile Picture" class="profile-picture" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
             </div>
@@ -38,7 +38,7 @@
                 <article class="p-3" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
                     <h1 class="fw-light">Hi and welcome to 101 Transfurmations Dog Grooming!</h1>
                     <p class="lead">
-                        It is our mission to give your pets the best treatment possible. We do this by being situated in a quiet and peacful environment that will make your pets feel at home. <br>
+                        It is our mission to give your pets the best treatment possible. We do this by being situated in a quiet and peaceful environment that will make your pets feel at home. <br>
                         We offer a 1-to-1 service, so your pet gets all of the attention that they need. <br>
                         To top if off, there is no need to worry as we are fully insured and are first aid trained, in case anything happens. <br>
                     </p>
@@ -85,6 +85,23 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+<section class="home-page-section bg-light" id="reviews">
+    <div class="container-fluid h-100 p-5">
+        <div class="row h-100">
+            <h1 class="display-1 lobster text-center mb-5" data-aos="fade" data-aos-duration="1000">Some words from our previous customers</h1>
+            {% for review in reviews %}
+                <div class="col-12 col-sm-6 col-md- col-lg-2 d-flex justify-content-center align-middle my-5" data-aos="fade-right" data-aos-duration="1000" data-delay="1000">
+                    <blockquote class="p-3">
+                        <q class="lead">{{ review.comment }}</q>
+                        <p>
+                            <cite>- {{ review.name }}</cite>
+                        </p>
+                    </blockquote>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>
