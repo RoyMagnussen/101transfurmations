@@ -47,6 +47,10 @@ html {
   object-position: top
 }
 
+.gallery-image {
+  background-color: transparent;
+}
+
 .gallery-image img {
   width: 100%;
   height: 400px;
