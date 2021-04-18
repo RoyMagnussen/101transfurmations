@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="home-page-section bg-blue">
+    <div class="container-fluid h-100 p-5">
+        <h1 class="display-1 lobster text-center mb-5" data-aos="fade" data-aos-duration="1000">Reviews</h1>
+        <form action="{% url 'reviews' %}" method="post" class="shadow-sm p-3 p-lg-5 bg-white" data-aos="fade" data-aos-duration="1000" data-aos-delay="500">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-lg rounded-0 border border-dark fw-bold my-2">ADD REVIEW</button>
+            <button type="reset" class="btn btn-lg rounded-0 border border-danger fw-bold my-2">RESET</button>
+        </form>
+        <hr class="mt-5">
+        <div class="row h-100">
+            {% for review in reviews %}
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center align-middle my-5" data-aos="fade-right" data-aos-duration="1000" data-delay="1000">
+                    <blockquote class="p-3">
+                        <q class="lead">{{ review.comment }}</q>
+                        <p>
+                            <cite>- {{ review.name }}</cite>
+                        </p>
+                    </blockquote>
+                </div>
+            {% endfor %}
+            <nav aria-label="Pagination" class="mt-5">
+                <ul class="pagination justify-content-center">
+                    {% if reviews.has_previous %}
+                        <a href="?page=1" class="page-link">&laquo; First</a>
+                        <a href="?page={{ reviews.previous_page_number }}" class="page-link">Previous</a>
+                    {% endif %}
+                    <span class="page-item page-link">
+                        Page {{ reviews.number }} of {{ reviews.paginator.num_pages }}
+                    </span>
+                    {% if reviews.has_next %}
+                        <a href="?page={{ reviews.next_page_number }}" class="page-link">Next</a>
+                        <a href="?page={{ reviews.paginator.num_pages }}" class="page-link">Last &raquo;</a>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+{% endblock content %}
