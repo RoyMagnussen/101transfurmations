@@ -19,4 +19,4 @@ class ReviewCreationForm(forms.ModelForm):
         super(ReviewCreationForm, self).__init__(*args, **kwargs)
 
         for field in self.fields:
-            self.field[field].widget.attrs['class'] = 'form-control rounded-0'
+            self.fields[field].widget.attrs['class'] = 'form-control rounded-0'
