@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="home-page-section bg-light">
+    <div class="container-fluid h-100 p-5">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 col-md-6" data-aos="fade-right" data-aos-duration="1000">
+                <h1 class="display-2 fw-bold">To book an appointment</h1>
+            </div>
+            <div class="col-12 col-md-6 mt-5" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">
+                <div class="d-block h-100">
+                    <h3 class="display-4 fw-bold lobster">Call/Text</h3>
+                    <a href="tel:+44738383938" class="nav-link mt-3">
+                        <i class="bi bi-phone-fill icon-lg"></i>
+                        0738383938
+                    </a>
+                    <h3 class="display-4 fw-bold lobster mt-5">Direct Message</h3>
+                    <a href="https://facebook.com/101Transfurmations" target="_blank" class="nav-link mt-3">
+                        <i class="bi bi-facebook icon-lg"></i>
+                        101 Transfurmations Dog Grooming
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
