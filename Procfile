@@ -1,0 +1,1 @@
+web: gunicorn one_zero_one_transfurmations.wsgi:application
