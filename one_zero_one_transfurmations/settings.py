@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # 3rd Party Apps
+    'storages',
 
     # My Apps
     'home',
@@ -141,15 +142,41 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+USE_AWS = os.environ.get('USE_AWS')
+
+if USE_AWS:
+    # AWS settings
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+    AWS_STORAGE_BUCKET_NAME = '101transfurmations'
+
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Media files settings
+    PUBLIC_MEDIA_LOCATION = 'media'
+
+    DEFAULT_FILE_STORAGE = 'one_zero_one_transfurmations.storage_backends.PublicMediaStorage'
+
+    MEDIA_URL = 'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOACTION}/'
+
+else:
+    MEDIA_URL = '/media/'
+
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = '/media/'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, STATIC_ROOT), )
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+SECURE_SSL_REDIRECT = True
