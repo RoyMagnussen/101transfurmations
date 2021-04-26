@@ -158,7 +158,7 @@ if USE_AWS:
     # Media files settings
     PUBLIC_MEDIA_LOCATION = 'media'
 
-    DEFAULT_FILE_STORAGE = 'one-zoer-one-transfurmations.storage_backends.PublicMediaStorage'
+    DEFAULT_FILE_STORAGE = 'one-zero-one-transfurmations.storage_backends.PublicMediaStorage'
 
     MEDIA_URL = 'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOACTION}/'
 
